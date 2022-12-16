@@ -1,0 +1,15 @@
+import string
+
+def sort_string(sentence): 
+    # without changing the original string
+    words = sentence.split()
+    words.sort()
+    sentence = " ".join(words)
+    return sentence
+
+
+
+sentence = input("Please enter a string: ")
+
+print(sort_string(sentence))
+

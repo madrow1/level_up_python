@@ -1,0 +1,11 @@
+def is_pallindrome(word):
+    word.lower()
+    if word == word[::-1]:
+        pallindrome = True
+    else:
+        pallindrome = False
+    return pallindrome
+
+word = input("Please enter a word: ")
+
+print(is_pallindrome(word))
