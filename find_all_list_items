@@ -1,0 +1,10 @@
+list = [1,2,3,4,5,6,2,1,2,4,5]
+
+def find_index(list, search_term):
+    index_list = []
+    for item in list:
+        if item == search_term:
+            index_list.append(list.index(item))    
+    print(index_list)
+
+print(find_index(list, 1))
