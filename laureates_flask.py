@@ -12,8 +12,8 @@ with open("laureates.csv", "r", encoding="utf-8") as f:
 def index():
     return render_template("index.html")
 
-@app.route("/laureates")
+@app.route("/laureates/")
 def laureate():
     return jsonify(laureates)
 
-app.run(debug=True)
+app.run(debug=True) 
