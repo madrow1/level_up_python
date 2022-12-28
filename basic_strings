@@ -1,0 +1,7 @@
+# Strings in python are a way of storing text variables, they are immutable and can be defined using single or double quotes.
+greet = "Hello World"
+print(greet)
+
+# Multiple strings can be contatonated together using a + 
+extended_greet = "Hello" + " " + "World" 
+print(extended_greet)
