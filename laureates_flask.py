@@ -8,10 +8,12 @@ with open("laureates.csv", "r", encoding="utf-8") as f:
     reader = csv.DictReader(f)
     laureates = list(reader)
 
+#index calls the laureates route and renders it out in browser
 @app.route("/")
 def index():
     return render_template("index.html")
 
+# jsonify here is used to convert the csv formatted files to json
 @app.route("/laureates/")
 def laureate():
     return jsonify(laureates)
