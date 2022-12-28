@@ -10,14 +10,13 @@ with open("laureates.csv", "r", encoding="utf-8") as f:
 #index calls the laureates route and renders it out in browser
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("laureates.html")
 
 # jsonify here is used to convert the csv formatted files to json
 @app.route("/laureates/")
-def laureate():
-    return jsonify(laureates)
+#def laureate():
+#    return jsonify(laureates)
 
-@app.route("/laureate/")
 def laureate_list():
     results = []
     if not request.args.get("surname"):
