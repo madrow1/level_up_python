@@ -1,0 +1,24 @@
+import os 
+
+DEVELOPMENT = "Development"
+PRODUCTION = "Production"
+STAGING = "Staging"
+CODE_SPACE = "Code_space"
+LOCAL = "Local"
+
+# This is a variable that sets the value of the environment to the value of the variable DEVELOPMENT, this is useful for segmenting codespaces
+current_env = os.environ.get("ENV_NAME", PRODUCTION)
+
+# IF ELSE and ELIF statements can be used to provide if then functionality in Python, they are useful for accepting user input
+# It is best not to over use them as they can be inefficient.
+if current_env == DEVELOPMENT: 
+    print("Development environment")
+elif current_env == PRODUCTION:
+    print("Production environment")
+elif current_env == STAGING:
+    print("Staging environment")
+# This checks for a substring in a string, and is useful for checking for the existence of a variable in a wider data set
+elif current_env in [CODE_SPACE or LOCAL]:
+    print("Codespace or local environment")
+else:
+    print("Unknown environment")
