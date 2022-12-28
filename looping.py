@@ -26,4 +26,6 @@ for name in reversed(names):
 for i in range(5):
     print(i)
 
-# The enumeration method can 
+# The enumeration method can be used to count the iteration and print it out.
+for i, name in enumerate(names):
+    print(f"{i} {name}")
