@@ -1,7 +1,6 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 import csv
 from distutils.log import debug 
-
 app = Flask(__name__)
 
 with open("laureates.csv", "r", encoding="utf-8") as f: 
@@ -17,5 +16,18 @@ def index():
 @app.route("/laureates/")
 def laureate():
     return jsonify(laureates)
+
+@app.route("/laureate/")
+def laureate_list():
+    results = []
+    if not request.args.get("surname"):
+        return jsonify(results)
+
+    search_string = request.args.get("surname").lower().strip()
+
+    for laureate in laureates:
+        if search_string in laureate["surname"].lower():
+           results.append(laureate)
+    return jsonify(results)
 
 app.run(debug=True) 
