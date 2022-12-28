@@ -1,0 +1,32 @@
+names = ["John", "Paul", "George", "Ringo"]
+ages = [20, 21, 22, 23]
+
+# To return a single value from a list use slice method plus index value 
+john = names[0]
+print(john)
+
+paul = names[1]
+print(paul)
+
+# To slice these values various methods can be used
+# To print up to the second value, note that these are returned in list format 
+john_paul = names[:2]
+print(john_paul)
+
+# To print from the second value onwards
+george_ringo = names[2:]
+print(george_ringo)
+
+# To print the list in reverse order, the ::-1 basically means that the start of the list should be the end, and that the list 
+# should be traversed in increments of -1
+reverse = names[::-1]
+print(reverse)
+
+# Similarly the list can be incremented in different values, so [::2] means that the list will traverse forward in steps of 2 
+every_other = names [::2]
+print(every_other)
+
+# It is possible to perform math functinos on lists
+print(sum(ages))
+print(min(ages))
+print(max(ages))
