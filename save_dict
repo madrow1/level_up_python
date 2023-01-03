@@ -1,0 +1,18 @@
+import json
+
+def save_dict(save_me):
+    dict_to_file = {}
+    index = 0 
+    for word in save_me.split(): 
+        dict_to_file[index] = word 
+        index +=1
+    with open("dict_to_file.json", "w") as f:
+        json.dump(dict_to_file, f, indent=2)
+
+
+
+
+
+save_me = input()
+
+save_dict(save_me)
