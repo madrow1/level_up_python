@@ -1,0 +1,14 @@
+# Selects all h1 tags 
+//h1
+
+# Selects all h1 tags that are direct children of a div tags
+//div/h1
+
+# Selects all h1 tags that are within a div tag regardless of their child status 
+//div//h1 
+
+# Elements can be selected by attribute using an @ symbol
+//span[@class="title"]/text()
+
+# To select a specific attributes based on an attribute tags
+//span[@class="title"]/@id 
