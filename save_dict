@@ -10,9 +10,13 @@ def save_dict(save_me):
         json.dump(dict_to_file, f, indent=2)
 
 
-
+def return_dict():
+    with open("dict_to_file.json") as f: 
+        data = json.load(f)
+        print(data)
 
 
 save_me = input()
 
 save_dict(save_me)
+return_dict()

@@ -1,0 +1,10 @@
+import time 
+#from playsound import playsound
+
+def alarm(time_to_alarm, message):    
+    time.sleep(time_to_alarm)
+    #playsound(sound)
+    print(message)
+
+
+alarm(5, "Wake up!")
