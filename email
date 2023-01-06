@@ -1,0 +1,19 @@
+
+import smtplib
+from email.message import EmailMessage 
+
+
+def send_email(subject, to, body, sender): 
+    with open(body) as f: 
+        msg = EmailMessage()
+        msg.set_content(f.read())
+
+    msg['Subject'] = subject
+    msg['From'] = sender
+    msg['To'] = to
+
+    s = smtplib.SMTP('localhost')
+    s.send_message(msg)
+    s.quit()
+
+send_email("Test email", "rowan.pitt@btinternet.com", "email.txt", "localhost")
