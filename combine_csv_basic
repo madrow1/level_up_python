@@ -1,0 +1,19 @@
+import csv
+import json 
+
+def combine_csv(csv1,csv2,output_file):
+    with open(csv1, "r") as f1:
+        reader1 = csv.DictReader(f1)
+        list1 = list(reader1)
+    with open(csv2, "r") as f2: 
+        reader2 = csv.DictReader(f2)
+        list2 = list(reader2)
+
+    combined = zip(list1, list2)
+
+    result = list(combined)
+
+    with open(output_file, "w") as w:
+        json.dump(result, w, indent=2)
+
+combine_csv("laureates.csv", "laureates.csv", "zip_test.json")

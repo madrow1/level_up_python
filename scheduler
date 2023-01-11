@@ -1,10 +1,21 @@
 import time 
+import sched
+# imports playsound module 
 #from playsound import playsound
 
+# Could be reconfigured to take three inputs so it could output a sound
 def alarm(time_to_alarm, message):    
+    # Takes the current time and adds a sleep in seconds to it, once that time has elapsed it prints the message in "message"
     time.sleep(time_to_alarm)
     #playsound(sound)
     print(message)
 
 
 alarm(5, "Wake up!")
+
+
+def schedule_function(event_time, function, *args):
+    s = sched.scheduler(time.time, time.sleep)
+    s.enterabs(event_time, 1, function, argument=args)
+    print(f'{function.__name__} scheduled for {time.ctime(event_time)}')
+    s.run()
