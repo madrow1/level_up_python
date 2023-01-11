@@ -15,8 +15,11 @@ def return_dict():
         data = json.load(f)
         print(data)
 
-
+print('============================================')
+print("Please enter a series of words to be saved as a dictionary: ")
 save_me = input()
-
+print('============================================')
 save_dict(save_me)
+print('============================================')
 return_dict()
+print('============================================')
